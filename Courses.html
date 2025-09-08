@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards with Badge - 3 per Row</title>
+  <link rel="stylesheet" href="Courses.css">
+  
+  
+</head>
+<body>
+
+  <nav class="navbar">
+    
+    <div class="logo">
+      <a href="index.html"><img src="/images/LOGO-removebg-preview.png" alt="logo" ></a>
+      
+    </div>
+
+    
+    <div class="striped"></div>
+
+    
+    <div class="nav-links" id="menu">
+      <a href="index.html">Home</a>
+      <a href="Courses.html">Courses</a>
+      <a href="servicesPage/Services.html">Services</a>
+      <a href="index.html#campuses1">Campuses</a>
+      <a href="Contact.html">Contact</a>
+      <a href="OurTeam.html">Our Team</a>
+    </div>
+
+    
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  
+  <div class="card-container">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <span class="badge">PRO</span>
+      <img src="images/web.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>Full Stack Web Development</h3>
+        <p>Website Development • Web</p>
+        <div class="buttons">
+          <a href="web.html" class="details">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <span class="badge">PRO</span>
+      <img src="images/Adweb.jpeg" alt="Card Image">
+      <div class="card-content">
+        <h3>Advance Web Development</h3>
+        <p>Showcase • Personal</p>
+        <div class="buttons">
+          <a href="advancedweb.html" class="details">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <span class="badge">PRO</span>
+      <img src="images/cyber.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>Cyber Security</h3>
+        <p>Content • CMS</p>
+        <div class="buttons">
+          <a href="Cyber.html" class="details">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <span class="badge">PRO</span>
+      <img src="images/forensic.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>Data Forensic & Cyber Security</h3>
+        <p>App • Marketing</p>
+        <div class="buttons">
+          <a href="Forensic.html" class="details">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <span class="badge">PRO</span>
+      <img src="images/python copy.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>Advance Python</h3>
+        <p>E-learning • Web</p>
+        <div class="buttons">
+          <a href="Python.html" class="details">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <span class="badge">PRO</span>
+      <img src="images/ui ux.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>Google UI / UX</h3>
+        <p>Corporate • Web</p>
+        <div class="buttons">
+          <a href="google.html" class="details">Details</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+   <footer class="footer">
+  <div class="footer-container">
+    <!-- Left Section -->
+    <div class="footer-left">
+      <a href="index.html" style="text-decoration: none;"><h2>Techub</h2></a>
+      <p>
+        We build innovative software solutions that empower businesses 
+        to scale and thrive in the digital world. Let's create the future together.
+      </p>
+      
+    </div>
+
+    <!-- Links Section -->
+    <div class="footer-links">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="../index.html#campuses1">Campuses</a></li>
+        <li><a href="../OurTeam.html">Our Team</a></li>
+        <li><a href="../Courses.html">Courses</a></li>
+        <li><a href="../servicesPage/Services.html">Services</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="../advancedweb.html">Advanced Web Development</a></li>
+        <li><a href="../Cyber.html">Cyber Security</a></li>
+        <li><a href="../google.html">Google UI/UX Design</a></li>
+        <li><a href="../Forensic.html">Data Forensic</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="../index.html#FAQ">FAQs</a></li>
+        <li><a href="../index.html#SR">Students Reviews</a></li>
+        <li><a href="../servicesPage/Services.html#CR">Client Reviews</a></li>
+        <li><a href="../Enroll.html">Enroll Now</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Punjab, Pakistan</p>
+      <p><i class="fas fa-phone-alt"></i> +92 300 1234567</p>
+      <p><i class="fas fa-envelope"></i> info@techub.com</p>
+      <li><a href="../Contact.html">🌐 Contact Now</a></li>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Techub. All Rights Reserved.</p>
+    
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+    });
+  });
+    </script>
+</body>
+</html>

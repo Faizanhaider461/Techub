@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NAVTTC — Application Requirements</title>
+  <meta name="description" content="Clean, responsive one-page site detailing NAVTTC course application requirements, documents, and apply steps." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+   :root{
+      --bg-1:#ffffff;
+      --bg-2:#f7f9fc;
+      --text:#1a1a1a;
+      --muted:#4b5563;
+      --accent:#2563eb;
+      --accent-2:#dc2626;
+      --ok:#16a34a;
+      --warn:#d97706;
+      --radius:16px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      color:var(--text);
+      background:linear-gradient(to bottom,var(--bg-1),var(--bg-2)) fixed;
+      line-height:1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    .container{width:min(1150px,92%);margin:auto}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,.9);
+      border-bottom:1px solid rgba(0,0,0,.08);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text)}
+    .logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),#60a5fa,var(--accent-2))}
+    .nav a.btn{background:var(--accent);color:#fff;padding:8px 14px;border-radius:999px;font-weight:600}
+
+    /* Hero */
+    .hero{padding:64px 0 36px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;
+      background:rgba(0,0,0,.05);color:var(--muted);font-size:.86rem}
+    .headline{font-size:clamp(28px,6vw,44px);margin:14px 0 10px;font-weight:800}
+    .sub{color:var(--muted);max-width:70ch}
+
+    /* Hero grid */
+    .hero-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:22px;
+      margin-top:26px;
+    }
+    .card{background:rgba(0,0,0,.04);border-radius:var(--radius);padding:18px}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{font-size:.82rem;padding:6px 10px;border-radius:12px;background:rgba(37,99,235,.08)}
+
+    /* Illustration card */
+    .card.illus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card.illus img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: var(--radius);
+    }
+
+    /* Sections */
+    section{padding:34px 0}
+    .section-title{font-size:1.4rem;font-weight:800;margin-bottom:14px}
+    .muted{color:var(--muted)}
+
+    /* Grid */
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .item{padding:16px;border-radius:14px;background:rgba(0,0,0,.04)}
+    .item h4{margin-bottom:8px;font-size:1.02rem}
+
+    /* Steps */
+    .steps{counter-reset:step}
+    .step{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:14px;background:rgba(0,0,0,.04);margin-bottom:10px}
+    .num{flex:0 0 36px;height:36px;border-radius:10px;display:grid;place-items:center;font-weight:800;background:var(--accent);color:#fff}
+
+    /* FAQs */
+    details{background:rgba(0,0,0,.04);border-radius:14px;padding:14px;margin-bottom:10px}
+    summary{cursor:pointer;font-weight:600}
+
+    /* CTA */
+    .cta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:18px;border-radius:16px;background:rgba(37,99,235,.08)}
+    .btn{padding:10px 14px;border-radius:12px;font-weight:700;cursor:pointer}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.ghost{background:rgba(0,0,0,.06);color:var(--text)}
+
+    /* Footer */
+    footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(0,0,0,.1);font-size:.9rem}
+
+    /* Utilities */
+    .check{color:var(--ok);font-weight:700}
+    .warn{color:var(--warn);font-weight:700}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .nav a.btn{padding:6px 12px}
+      .grid.cols-3, .grid.cols-2{grid-template-columns:1fr}
+      .headline{font-size:clamp(24px,8vw,38px)}
+    }
+
+
+    @media (max-width: 200px) {
+  body {
+    font-size: 12px; /* shrink base text */
+  }
+
+  .headline {
+    font-size: 18px; /* prevent overflow */
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hero-grid,
+  .grid.cols-3,
+  .grid.cols-2 {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .btn,
+  .nav a.btn {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .card,
+  .item,
+  .step,
+  details {
+    padding: 10px;
+  }
+
+  .num {
+    flex: 0 0 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}
+
+.navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border-bottom: 1px solid #222;
+      padding: 0 15px;
+      position: relative;
+      z-index: 1000;
+      height: 100px;
+      position: sticky;
+  top: 0;
+    }
+
+    /* Logo section */
+    .logo {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      
+      
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 110px;
+      margin-right: 8px;
+    }
+
+    .logo span {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      margin-left: auto; /* Pushes links to the right */
+    }
+
+    .nav-links a {
+      padding: 15px 20px;
+      color: #000000;
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      border-right: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(73,161,255,1);
+      color: white;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 40px;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: rgb(0, 0, 0);
+      border-radius: 3px;
+    }
+
+    /* Mobile styles */
+    /* Mobile styles */
+@media (max-width: 992px) {
+  .striped {
+    display: none;
+  }
+  .logo {
+      display: flex;
+      align-items: center;
+      padding: 15px 0px 20px 0px; 
+      flex-shrink: 0;
+    }
+  .logo img {
+      height: 90px;
+      margin-right: 8px;
+    }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;          /* take full screen width */
+    background: white;
+    border-top: 1px solid white;
+    position: absolute;
+    top: 98px;             /* exactly below navbar */
+    left: 0;
+    margin: 0;             /* remove left margin */
+    padding: 0;            /* remove inner padding */
+  }
+
+  .nav-links a {
+    text-align: left;
+    border-right: none;
+    color: black;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+    padding-left: 20px;    /* small left space */
+    box-sizing: border-box;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
+
+    .footer {
+  background: #0d1117;
+  color: #ccc;
+  font-family: Arial, sans-serif;
+  padding: 60px 20px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.footer-left h2 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.footer-left p {
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.footer-social a {
+  color: #ccc;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #00aaff;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 10px 0;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #00aaff;
+}
+
+.footer-contact p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  color: #00aaff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom-links a {
+  margin-left: 20px;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-bottom-links a:hover {
+  color: #00aaff;
+}
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-social a {
+    margin: 0 10px;
+  }
+}
+
+.footer-contact li a{
+  text-decoration: none;
+  color: #ccc;
+}
+
+.footer-contact li{
+  list-style-type: none;
+  font-size: 15px;
+}
+  </style>
+</head>
+<body>
+
+    <nav class="navbar">
+    
+    <div class="logo">
+      <a href="index.html"><img src="/images/LOGO-removebg-preview.png" alt="logo" ></a>
+      
+    </div>
+
+  
+    <div class="striped"></div>
+
+    
+    <div class="nav-links" id="menu">
+      <a href="index.html">Home</a>
+      <a href="Courses.html">Courses</a>
+      <a href="servicesPage/Services.html">Services</a>
+      <a href="index.html#campuses1">Campuses</a>
+      <a href="Contact.html">Contact</a>
+      <a href="OurTeam.html">Our Team</a>
+    </div>
+
+    
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple logo -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z" stroke="white" stroke-opacity=".9" stroke-width="1.4"/>
+            <path d="M12 7.2L6.2 10.5 12 13.8l5.8-3.3L12 7.2Z" fill="white" fill-opacity=".9"/>
+          </svg>
+        </div>
+        <span>NAVTTC — Apply Guide</span>
+      </div>
+      <a class="btn" href="Enroll.html">Apply Now</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+     
+      <h1 class="headline">NAVTTC Course Application Requirements</h1>
+      <p class="sub">This one-page guide summarizes typical requirements to apply for <strong>NAVTTC</strong> training programs in Pakistan. Always verify the exact criteria on the official portal for your chosen batch and trade.</p>
+      <div class="hero-grid">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Quick Highlights</h3>
+          <div class="grid cols-2">
+            <div class="item"><div class="icon">✅</div><strong>Citizenship:</strong> Pakistani with valid CNIC</div>
+            <div class="item"><div class="icon">🎂</div><strong>Age:</strong> often 18–30; some trades allow up to 40</div>
+            <div class="item"><div class="icon">🎓</div><strong>Education:</strong> Matric/Inter; advanced IT may require Bachelor’s</div>
+            <div class="item"><div class="icon">📝</div><strong>Apply:</strong> Online via NSIS portal</div>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Free & paid intakes</span>
+            <span class="chip">Entry test / interview (varies)</span>
+            <span class="chip">No prior NAVTTC training (some batches)</span>
+          </div>
+        </div>
+        <div class="card illus" aria-hidden="true">
+          <img src="images/tech hub logo.png" alt="Illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility -->
+    <section id="eligibility">
+      <h2 class="section-title">General Eligibility</h2>
+      <p class="muted">These are common criteria. Exact requirements can vary by <em>batch, trade, and center</em>.</p>
+      <div class="grid cols-3">
+        <div class="item">
+          <h4>Citizenship & ID</h4>
+          <p>Pakistani citizen with a valid <strong>CNIC</strong> (or B-Form for some youth programs). Domicile may be required for specific projects.</p>
+        </div>
+        <div class="item">
+          <h4>Age</h4>
+          <p>Typically <strong>18–30</strong>. Some vocational trades allow up to <strong>40</strong>. Age relaxations depend on program guidelines.</p>
+        </div>
+        <div class="item">
+          <h4>Education</h4>
+          <p><strong>Matric/Intermediate</strong> for most skills. Advanced IT (AI/DS/Web) may require a <strong>Bachelor’s</strong> in a relevant field.</p>
+        </div>
+        <div class="item">
+          <h4>Experience</h4>
+          <p>Not mandatory for basic trades. Prior NAVTTC trainees can be <span class="warn">ineligible</span> for some intakes.</p>
+        </div>
+        <div class="item">
+          <h4>Availability</h4>
+          <p>Commit to full-time classes (3–6 months typical). Minimum <strong>attendance</strong> rules apply for certification.</p>
+        </div>
+        <div class="item">
+          <h4>Assessments</h4>
+          <p>Entry test and/or interview may apply. Final certification requires passing internal and competency assessments.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents -->
+    <section id="documents">
+      <h2 class="section-title">Required Documents</h2>
+      <div class="grid cols-3">
+        <div class="item">
+          <h4>Identification</h4>
+          <ul>
+            <li>CNIC (front & back) / B-Form</li>
+            <li>Recent passport-size photos</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h4>Education</h4>
+          <ul>
+            <li>Matric / Intermediate certificates</li>
+            <li>Degree / Transcript (if required)</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h4>Other</h4>
+          <ul>
+            <li>Domicile (if program-specific)</li>
+            <li>Fee challan receipt (for paid intakes)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Apply -->
+    <section id="steps">
+      <h2 class="section-title">How to Apply (NSIS Portal)</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num"><span>1</span></div>
+          <div>
+            <strong>Create Account</strong>
+            <p>Go to the official <em>NSIS</em> portal, sign up with your CNIC & mobile, complete OTP verification, and set a password.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num"><span>2</span></div>
+          <div>
+            <strong>Fill Profile</strong>
+            <p>Enter personal details, education, address, and (if any) employment info. Upload clear photos & documents.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num"><span>3</span></div>
+          <div>
+            <strong>Choose Course & Center</strong>
+            <p>Select your <em>trade</em>, preferred training provider/center, and shift. Review eligibility shown on the listing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num"><span>4</span></div>
+          <div>
+            <strong>Submit & Track</strong>
+            <p>Submit the application. For paid intakes, generate a challan and add payment details. Track status on your dashboard.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num"><span>5</span></div>
+          <div>
+            <strong>Assessment & Joining</strong>
+            <p>Download roll-number slip if there’s a test. On selection, visit the center with originals for verification & orientation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section>
+      <h2 class="section-title">Smart Tips</h2>
+      <div class="grid cols-3">
+        <div class="item"><strong class="check">✔</strong> Apply early — seats can fill quickly in popular trades.</div>
+        <div class="item"><strong class="check">✔</strong> Use your own CNIC & phone to avoid verification issues.</div>
+        <div class="item"><strong class="check">✔</strong> Keep scanned PDFs under 1–2 MB for smooth uploads.</div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs">
+      <h2 class="section-title">FAQs</h2>
+      <details>
+        <summary>What’s the minimum education required?</summary>
+        <p>Many trades accept Matric/Inter. Advanced IT programs may require a Bachelor’s (CS/IT/Engineering/Maths/Stats/etc.).</p>
+      </details>
+      <details>
+        <summary>Is there an age limit?</summary>
+        <p>Commonly 18–30. Some vocational programs allow up to 40. Always check the listing for the batch you select.</p>
+      </details>
+      <details>
+        <summary>Can previous NAVTTC trainees apply again?</summary>
+        <p>Some intakes restrict candidates who already availed NAVTTC training. Read the batch-specific rules.</p>
+      </details>
+      <details>
+        <summary>Is there any fee?</summary>
+        <p>Many programs are fully funded; some centers run paid intakes. If paid, you’ll generate a bank challan on the portal.</p>
+      </details>
+    </section>
+
+    
+  </main>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Left Section -->
+    <div class="footer-left">
+      <a href="index.html" style="text-decoration: none;"><h2>Techub</h2></a>
+      <p>
+        We build innovative software solutions that empower businesses 
+        to scale and thrive in the digital world. Let's create the future together.
+      </p>
+      
+    </div>
+
+    <!-- Links Section -->
+    <div class="footer-links">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="../index.html#campuses1">Campuses</a></li>
+        <li><a href="../OurTeam.html">Our Team</a></li>
+        <li><a href="../Courses.html">Courses</a></li>
+        <li><a href="../servicesPage/Services.html">Services</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="../advancedweb.html">Advanced Web Development</a></li>
+        <li><a href="../Cyber.html">Cyber Security</a></li>
+        <li><a href="../google.html">Google UI/UX Design</a></li>
+        <li><a href="../Forensic.html">Data Forensic</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="../index.html#FAQ">FAQs</a></li>
+        <li><a href="../index.html#SR">Students Reviews</a></li>
+        <li><a href="../servicesPage/Services.html#CR">Client Reviews</a></li>
+        <li><a href="../Enroll.html">Enroll Now</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Punjab, Pakistan</p>
+      <p><i class="fas fa-phone-alt"></i> +92 300 1234567</p>
+      <p><i class="fas fa-envelope"></i> info@techub.com</p>
+      <li><a href="../Contact.html">🌐 Contact Now</a></li>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Techub. All Rights Reserved.</p>
+    
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script>
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // FAQ keyboard accessibility
+    document.querySelectorAll('details summary').forEach(s=>{
+      s.addEventListener('keydown', (e)=>{
+        if(e.key==='Enter' || e.key===' '){ e.preventDefault(); s.click(); }
+      });
+    });
+  </script>
+</body>
+</html>

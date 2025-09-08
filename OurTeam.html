@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+        background: linear-gradient(135deg, #f0f2f5, #e6e9f0);
+        color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border-bottom: 1px solid #222;
+      padding: 0 15px;
+      position: relative;
+      z-index: 1000;
+      height: 100px;
+      position: sticky;
+  top: 0;
+    }
+
+    /* Logo section */
+    .logo {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      
+      
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 110px;
+      margin-right: 8px;
+    }
+
+    .logo span {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+
+    /* Striped background */
+    .striped {
+      width: 60px;
+      background: repeating-linear-gradient(
+        135deg,
+        #1a1a1a,
+        #1a1a1a 6px,
+        #222 6px,
+        #222 12px
+      );
+      border-right: 1px solid #222;
+      flex-shrink: 0;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      margin-left: auto; /* Pushes links to the right */
+    }
+
+    .nav-links a {
+      padding: 15px 20px;
+      color: #000000;
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      border-right: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(73,161,255,1);
+      color: white;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 40px;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: rgb(0, 0, 0);
+      border-radius: 3px;
+    }
+
+    /* Mobile styles */
+    /* Mobile styles */
+@media (max-width: 992px) {
+  .striped {
+    display: none;
+  }
+  .logo {
+      display: flex;
+      align-items: center;
+      padding: 15px 0px 20px 0px; 
+      flex-shrink: 0;
+    }
+  .logo img {
+      height: 90px;
+      margin-right: 8px;
+    }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;          /* take full screen width */
+    background: white;
+    border-top: 1px solid white;
+    position: absolute;
+    top: 98px;             /* exactly below navbar */
+    left: 0;
+    margin: 0;             /* remove left margin */
+    padding: 0;            /* remove inner padding */
+  }
+
+  .nav-links a {
+    text-align: left;
+    border-right: none;
+    color: black;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+    padding-left: 20px;    /* small left space */
+    box-sizing: border-box;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+    .team-section {
+        text-align: center;
+        padding: 80px 20px;
+    }
+    .team-section h1 {
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .team-section p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+    .team-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .team-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    .team-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        border-color: #00c6ff;
+    }
+    .team-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .team-card h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #222;
+    }
+    .team-card p.role {
+        font-size: 16px;
+        color: #007bff;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+    .team-card p.desc {
+        font-size: 15px;
+        color: #444;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .social-icons a {
+        font-size: 20px;
+        color: #333;
+        background: rgba(255, 255, 255, 0.3);
+        padding: 10px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+        background: #00c6ff;
+        color: #fff;
+    }
+
+
+        .footer {
+  background: #0d1117;
+  color: #ccc;
+  font-family: Arial, sans-serif;
+  padding: 60px 20px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.footer-left h2 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.footer-left p {
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.footer-social a {
+  color: #ccc;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #00aaff;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 10px 0;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #00aaff;
+}
+
+.footer-contact p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  color: #00aaff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom-links a {
+  margin-left: 20px;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-bottom-links a:hover {
+  color: #00aaff;
+}
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-social a {
+    margin: 0 10px;
+  }
+}
+
+.footer-contact li a{
+  text-decoration: none;
+  color: #ccc;
+}
+
+.footer-contact li{
+  list-style-type: none;
+  font-size: 15px;
+}
+
+</style>
+</head>
+<body>
+
+    <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html"><img src="/images/LOGO-removebg-preview.png" alt="logo" ></a>
+      
+    </div>
+
+    <!-- Striped divider -->
+    <div class="striped"></div>
+
+    <!-- Nav links -->
+    <div class="nav-links" id="menu">
+      <a href="index.html">Home</a>
+      <a href="Courses.html">Courses</a>
+      <a href="servicesPage/Services.html">Services</a>
+      <a href="index.html#campuses1">Campuses</a>
+      <a href="Contact.html">Contact</a>
+      <a href="OurTeam.html">Our Team</a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+<section class="team-section">
+    <h1>Meet Our Team</h1>
+    <p>Creative minds behind our success</p>
+
+    <div class="team-container">
+        <div class="team-card">
+            <img src="images/Muiz Profile Pic.jpg" alt="Ali Khan">
+            <h3>M Moeez</h3>
+            <p class="role">Manager Of Tech-hub, Faisalabad</p>
+            <p class="desc">Ali leads the vision and strategy of our company, ensuring growth and innovation at every step.</p>
+            
+        </div>
+
+        <div class="team-card">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sara Ahmed">
+            <h3>Sara Ahmed</h3>
+            <p class="role">Marketing Head</p>
+            <p class="desc">Sara is the creative force behind our brand, managing campaigns and client relationships with passion.</p>
+            
+        </div>
+
+        <div class="team-card">
+            <img src="images/No one.jpg" alt="Ahmed Raza">
+            <h3>Eng. Asad Ali</h3>
+            <p class="role">Manager Of Tech-hub, Queeta</p>
+            <p class="desc">Ahmed builds robust solutions with cutting-edge technology, ensuring scalability and performance.</p>
+            
+        </div>
+    </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Left Section -->
+    <div class="footer-left">
+      <a href="index.html" style="text-decoration: none;"><h2>Techub</h2></a>
+      <p>
+        We build innovative software solutions that empower businesses 
+        to scale and thrive in the digital world. Let's create the future together.
+      </p>
+      
+    </div>
+
+    <!-- Links Section -->
+    <div class="footer-links">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="../index.html#campuses1">Campuses</a></li>
+        <li><a href="../OurTeam.html">Our Team</a></li>
+        <li><a href="../Courses.html">Courses</a></li>
+        <li><a href="../servicesPage/Services.html">Services</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="../advancedweb.html">Advanced Web Development</a></li>
+        <li><a href="../Cyber.html">Cyber Security</a></li>
+        <li><a href="../google.html">Google UI/UX Design</a></li>
+        <li><a href="../Forensic.html">Data Forensic</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="../index.html#FAQ">FAQs</a></li>
+        <li><a href="../index.html#SR">Students Reviews</a></li>
+        <li><a href="../servicesPage/Services.html#CR">Client Reviews</a></li>
+        <li><a href="../Enroll.html">Enroll Now</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Punjab, Pakistan</p>
+      <p><i class="fas fa-phone-alt"></i> +92 300 1234567</p>
+      <p><i class="fas fa-envelope"></i> info@techub.com</p>
+      <li><a href="../Contact.html">🌐 Contact Now</a></li>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Techub. All Rights Reserved.</p>
+    
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+    });
+  });
+    </script>
+</body>
+</html>

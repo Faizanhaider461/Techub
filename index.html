@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curved Carousel</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html"><img src="/images/LOGO-removebg-preview.png" alt="logo" ></a>
+      
+    </div>
+
+    <!-- Striped divider -->
+    <div class="striped"></div>
+
+    <!-- Nav links -->
+    <div class="nav-links" id="menu">
+      <a href="index.html"><b></b>Home</a>
+      <a href="Courses.html">Courses</a>
+      <a href="servicesPage/Services.html">Services</a>
+      <a href="#campuses1">Campuses</a>
+      <a href="Contact.html">Contact</a>
+      <a href="OurTeam.html">Our Team</a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+    
+
+
+<div class="container">
+  <!-- Main Carousel -->
+  <div class="main-carousel">
+    <span class="arrow left" onclick="prevSlide()">&#10094;</span>
+    <span class="arrow right" onclick="nextSlide()">&#10095;</span>
+
+    <img src="images/1.png" class="active">
+    <img src="images/2.png">
+    <img src="images/3.png">
+    <img src="images/4.png">
+    <img src="images/5.png">
+    <img src="images/6.png">
+
+
+  </div>
+
+
+    
+
+    <!-- Right Section -->
+    <div class="side-section">
+      <div class="logo-box">
+        <img src="images/LOGO-removebg-preview.png" alt="" style="height: 200px; width: 200px;"">
+      </div>
+
+      <div class="auto-carousel" id="sideAuto">
+        <img src="images/Muiz Profile Pic.jpg" class="active">
+        <img src="images/No one.jpg">
+        <img src="images/No one.jpg">
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<!-- Enroll Button Center -->
+<div class="enroll-container">
+  <a href="Enroll.html" class="enroll-btn">Enroll Now</a>
+</div>
+
+
+
+ <main class="campuses-section" id="main">
+    <div class="containers">
+
+      <section id="campuses1">
+      <header class="campuses-header">
+  <div>
+    <h1 class="title">Our Campuses</h1>
+    <p class="subtitle">
+      Premium facilities across the country — find the campus nearest to you.
+    </p>
+  </div>
+</header>
+</section>
+
+      
+
+      <section class="campus-grid" id="campusContainer">
+        
+        <!-- CARD 1 -->
+        <article class="campus-card" 
+          data-name="Main Campus" 
+          data-location="Main GT Road, Kashmir Park Rd, near Bajwa Hospital, Shahdara, Pakistan" 
+          data-phone="+92 300 1234567" 
+          data-days="Mon – Sat" 
+          data-description="Main Campus houses our administrative headquarters, state-of-the-art labs, and an auditorium used for national conferences." 
+          data-image="images/Flex-desk-techub.jpg">
+          
+          <div class="card-media" style="background-image:url('/images/Sharda.jpg')" aria-hidden="true"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="name">Shahdara Campus</h3>
+              
+            </div>
+            <div class="details">
+              <div class="detail-row"><i class="fas fa-map-marker-alt"></i><span>Main GT Road, Kashmir Park Shahdara</span></div>
+              <div class="detail-row"><i class="fas fa-phone"></i><span>+92 300 1234567</span></div>
+              <div class="detail-row"><i class="fas fa-calendar-alt"></i><span>Mon – Sat</span></div>
+            </div>
+            <div class="card-actions">
+              <a class="btn primary" href="tel:+923001234567">🌐 Visit</a>
+              <button class="btn ghost view-details">View details</button>
+              <a class="btn primary" href="https://maps.app.goo.gl/SSxfigb8FL3j3Chr8"><i class="fas fa-map"></i> Location</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="campus-card" 
+          data-name="IER Campus" 
+          data-location="Institute of Education & Research, Punjab University Lahore" 
+          data-phone="+92 301 7654321" 
+          data-days="Mon – Fri" 
+          data-description="City Campus focuses on industry-coupled programmes and evening classes for working professionals." 
+          data-image="images/karachi-campus.jpg">
+          
+          <div class="card-media" style="background-image:url('/images/Flex-desk-techub.jpg')" aria-hidden="true"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="name">IER Campus</h3>
+              
+            </div>
+            <div class="details">
+              <div class="detail-row"><i class="fas fa-map-marker-alt"></i><span>Institute of Education & Research, Punjab University Lahore</span></div>
+              <div class="detail-row"><i class="fas fa-phone"></i><span>+92 301 7654321</span></div>
+              <div class="detail-row"><i class="fas fa-calendar-alt"></i><span>Mon – Fri</span></div>
+            </div>
+            <div class="card-actions">
+              <a class="btn primary" href="tel:+923017654321">🌐 Visit</a>
+              <button class="btn ghost view-details">View details</button>
+              <a class="btn primary" href="https://maps.app.goo.gl/Fo8CsYmF99p6rSJVA"><i class="fas fa-map"></i> Location</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="campus-card" 
+          data-name="Kasur Campus" 
+          data-location="Main Khem Karan Road, Saleem Town Kasur" 
+          data-phone="+92 333 1112233" 
+          data-days="Mon – Sat" 
+          data-description="North Campus has research centers, green campus initiatives, and dedicated residential facilities." 
+          data-image="images/islamabad-campus.jpg">
+          
+          <div class="card-media" style="background-image:url('/images/Kasur.jpg')" aria-hidden="true"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="name">Kasur Campus</h3>
+              
+            </div>
+            <div class="details">
+              <div class="detail-row"><i class="fas fa-map-marker-alt"></i><span>Main Khem Karan Road, Saleem Town Kasur</span></div>
+              <div class="detail-row"><i class="fas fa-phone"></i><span>+92 333 1112233</span></div>
+              <div class="detail-row"><i class="fas fa-calendar-alt"></i><span>Mon – Sat</span></div>
+            </div>
+            <div class="card-actions">
+              <a class="btn primary" href="tel:+923331112233">🌐 Visit</a>
+              <button class="btn ghost view-details">View details</button>
+              <a class="btn primary" href="https://maps.app.goo.gl/W1xqdgN9QsodLu1J6"><i class="fas fa-map"></i> Location</a>
+            </div>
+          </div>
+        </article>
+
+         <!-- CARD 4 -->
+        <article class="campus-card" 
+          data-name="Faisalabad Campus" 
+          data-location="Choti D-Ground, People Colony, Faisalabad" 
+          data-phone="+92 300 1234567" 
+          data-days="Mon – Sat" 
+          data-description="Main Campus houses our administrative headquarters, state-of-the-art labs, and an auditorium used for national conferences." 
+          data-image="images/Flex-desk-techub.jpg">
+          
+          <div class="card-media" style="background-image:url('/images/Fsd.jpg')" aria-hidden="true"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="name">Faisalabad Campus</h3>
+              
+            </div>
+            <div class="details">
+              <div class="detail-row"><i class="fas fa-map-marker-alt"></i><span>Choti D-Ground, People Colony, Faisalabad</span></div>
+              <div class="detail-row"><i class="fas fa-phone"></i><span>+92 300 1234567</span></div>
+              <div class="detail-row"><i class="fas fa-calendar-alt"></i><span>Mon – Sat</span></div>
+            </div>
+            <div class="card-actions">
+              <a class="btn primary" href="https://techhubsystems.com">🌐 Visit</a>
+              <button class="btn ghost view-details">View details</button>
+              <a class="btn primary" href="https://maps.app.goo.gl/G2S52in3u3KKrBnj8"><i class="fas fa-map"></i> Location</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5 -->
+        <article class="campus-card" 
+          data-name="Bahawalpur Campus" 
+          data-location="Opp. Sir Sadiq Marquee, Sadar Puli, Bahawalpur" 
+          data-phone="+92 301 7654321" 
+          data-days="Mon – Fri" 
+          data-description="City Campus focuses on industry-coupled programmes and evening classes for working professionals." 
+          data-image="images/karachi-campus.jpg">
+          
+          <div class="card-media" style="background-image:url('/images/Bahawalpur.jpeg')" aria-hidden="true"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="name">Bahawalpur Campus</h3>
+              
+            </div>
+            <div class="details">
+              <div class="detail-row"><i class="fas fa-map-marker-alt"></i><span>Opp. Sir Sadiq Marquee, Sadar Puli, Bahawalpur</span></div>
+              <div class="detail-row"><i class="fas fa-phone"></i><span>+92 301 7654321</span></div>
+              <div class="detail-row"><i class="fas fa-calendar-alt"></i><span>Mon – Fri</span></div>
+            </div>
+            <div class="card-actions">
+              <a class="btn primary" href="tel:+923017654321">🌐 Visit</a>
+              <button class="btn ghost view-details">View details</button>
+              <a class="btn primary" href=""><i class="fas fa-map"></i> Location</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="campus-card" 
+          data-name="Queeta Campus" 
+          data-location="Arbab Karam Khan Road, Opposite Elementary College, Old BISP Building, Quetta" 
+          data-phone="+92 333 1112233" 
+          data-days="Mon – Sat" 
+          data-description="North Campus has research centers, green campus initiatives, and dedicated residential facilities." 
+          data-image="images/banner_image_techub">
+          
+          <div class="card-media" style="background-image:url('/images/banner_image_techub.webp')" aria-hidden="true"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="name">Queeta Campus</h3>
+              
+            </div>
+            <div class="details">
+              <div class="detail-row"><i class="fas fa-map-marker-alt"></i><span>Arbab Karam Khan Road, Opposite Elementary College, Old BISP Building, Quetta</span></div>
+              <div class="detail-row"><i class="fas fa-phone"></i><span>+92 333 1112233</span></div>
+              <div class="detail-row"><i class="fas fa-calendar-alt"></i><span>Mon – Sat</span></div>
+            </div>
+            <div class="card-actions">
+              <a class="btn primary" href="https://techhubquetta.com/">🌐 Visit</a>
+              <button class="btn ghost view-details">View details</button>
+              <a class="btn primary" href="https://maps.app.goo.gl/cYeEpdCPw31CxYmq9"><i class="fas fa-map"></i> Location</a>
+            </div>
+          </div>
+        </article>
+
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-media" id="modalImage"></div>
+      <div class="modal-body">
+        <h2 id="modalName"></h2>
+        <p id="modalLocation" class="muted"></p>
+        <p id="modalPhone" class="muted"></p>
+        <p id="modalDays" class="muted"></p>
+        <hr>
+        <p id="modalDescription"></p>
+        <div class="modal-actions">
+          <a id="modalCall" class="btn primary" href="#"><i class="fas fa-phone"></i> Call</a>
+          <a id="modalRoute" style="border: none; cursor:default;" class="btn" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Footer Top Start -->
+  <div style="position:relative; overflow:hidden; line-height:0;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2880 200" preserveAspectRatio="none" style="display:block; width:200%; height:100px; animation: waveMove 10s linear infinite;">
+    
+    <!-- Wave Path -->
+    <path fill="rgba(73,161,255,1)" d="M0,80 
+      C240,0 480,160 720,80 
+      C960,0 1200,160 1440,80 
+      C1680,0 1920,160 2160,80 
+      C2400,0 2640,160 2880,80 
+      L2880,200 L0,200 Z"></path>
+  </svg>
+</div>
+
+<style>
+@keyframes waveMove {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+
+
+<section class="stats">
+  
+  <div class="stat-box">
+    <h3><span class="counter" data-target="6">0</span></h3>
+    <p>Campuses</p>
+  </div>
+
+  <div class="stat-box">
+    <h3><span class="counter" data-target="7000">0</span></h3>
+    <p>Students</p>
+  </div>
+  
+  <div class="stat-box">
+    <h3><span class="counter" data-target="7">0</span></h3>
+    <p>Years of Excellence</p>
+  </div>
+</section>
+
+ <section class="partners-section">
+    <h2>Our Partners</h2>
+    <div class="partners-logos">
+      <div class="partner-logo">
+        <img src="/images/navtec-removebg-preview.png" alt="NAVTTC">
+      </div>
+      <div class="partner-logo">
+        <img src="/images/pseb-logo.webp" alt="PSEB">
+      </div>
+    </div>
+  </section>
+
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<section class="courses-section">
+  <h2>Paid Courses we're proud to share</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <a href="web.html"><div class="swiper-slide course-card">
+        <a href="web.html"><img src="/images/WEBDEV.jpg" alt="Office Management" style="height: 259px;"></a>
+        <a href="web.html"><div class="course-info">
+          <a href="web.html" style="text-decoration: none;"><span>Full-Stack WEB Development</span></a>
+           <a href="web.html" style="text-decoration: none; color: black;"><h3>Web Building</h3></a>
+          <a href="web.html"><button>&#10132;</button></a>
+        </div></a>
+      </div></a>
+
+      <!-- Slide 2 -->
+      <a href="Cyber.html"><div class="swiper-slide course-card">
+        <a href="Cyber.html"><img src="/images/Cybers.webp" alt="Cyber Security" style="height: 259px;"></a>
+        <a href="Cyber.html"><div class="course-info">
+          <a href="Cyber.html" style="text-decoration: none;"><span>Cyber Security</span></a>
+           <a href="Cyber.html" style="text-decoration: none; color: black;"><h3>Security</h3></a>
+          <a href="Cyber.html"><button>&#10132;</button></a>
+        </div></a>
+      </div></a>
+
+      <!-- Slide 3 -->
+      <a href="Python.html"><div class="swiper-slide course-card">
+        <a href="Python.html"><img src="/images/ADPY.jpeg" alt="Advanced Python" style="height: 259px;"></a>
+        <a href="Python.html"><div class="course-info">
+           <a href="Python.html" style="text-decoration: none;"><span>Advanced Python</span></a>
+          <a href="Python.html" style="text-decoration: none; color: black;"><h3>Programming</h3></a>
+          <a href="Python.html"><button>&#10132;</button></a>
+        </div></a>
+      </div></a>
+
+      <!-- Slide 4 -->
+<a href="google.html"><div class="swiper-slide course-card">
+  <a href="google.html"><img src="/images/google.jpg" alt="Google UX"></a>
+  <a href="google.html"><div class="course-info" >
+    <a href="google.html" style="text-decoration: none;"><span>Google UI / UX</span></a>
+    <a href="google.html" style="text-decoration: none; color: black;"><h3>User Experience Design</h3></a>
+    <a href="google.html"><button>&#10132;</button></a>
+  </div></a>
+</div></a>
+
+<!-- Slide 5 -->
+<a href="advancedweb.html"><div class="swiper-slide course-card">
+  <a href="advancedweb.html"><img src="/images/ADWD.jpeg" alt="SEO" style="height: 259px;"></a>
+  <a href="advancedweb.html"><div class="course-info">
+    <a href="advancedweb.html" style="text-decoration: none;"><span>Advanced Web Development</span></a>
+    <a href="advancedweb.html" style="text-decoration: none; color: black;"><h3>Webite Building</h3></a>
+    <a href="advancedweb.html"><button>&#10132;</button></a>
+  </div></a>
+</div></a>
+
+<!-- Slide 6 -->
+<a href="Forensic.html"><div class="swiper-slide course-card">
+  <a href="Forensic.html"><img src="/images/DF.jpeg" alt="Microsoft Azure" style="height: 259px;"></a>
+  <a href="Forensic.html"><div class="course-info">
+    <a href="Forensic.html" style="text-decoration: none;"><span>Data Forensic</span></a> 
+    <a href="Forensic.html" style="text-decoration: none; color: black;"><h3>Research</h3></a>
+    <a href="Forensic.html"><button>&#10132;</button></a>
+  </div></a>
+</div></a>
+
+
+
+
+    
+</section>
+  
+<section id="SR">
+  <section class="review-section">
+  <h2>Student Reviews</h2>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- Slide 1 -->
+      <div class="review-card">
+        <img src="/images/Boy1.jpg" alt="Student 1">
+        <h3>Muhammad Ahmed</h3>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <p>TechHub has been my go-to place to stay updated with modern tech trends and devices. The website is neatly organized and very resourceful.</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="review-card">
+        <img src="/images/Girl1.jpg" alt="Student 2">
+        <h3>Fatima Khan</h3>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <p>The courses here are interactive and well-structured. The team is very supportive and ensures you understand every concept clearly.</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="review-card">
+        <img src="/images/Boy2.jpg" alt="Student 3">
+        <h3>Ali Raza</h3>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p>Amazing platform! I learned so much in a short time. Definitely recommend it to anyone who wants to enhance their tech skills.</p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <button class="carousel-btn btn-prev"><i class="fa-solid fa-angle-left"></i></button>
+    <button class="carousel-btn btn-next"><i class="fa-solid fa-angle-right"></i></button>
+  </div>
+</section>
+</section>
+
+<section id="FAQ">
+<div id="container">
+  <h1>Student FAQs</h1>
+  <p class="sub-heading">Answers to common questions about our courses and services</p>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>What courses do you offer for students?</span>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="faq-answer">
+      We offer Web Development, Mobile App Development, UI/UX Design, and Software Engineering courses tailored for students of all levels.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Are your courses beginner-friendly?</span>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="faq-answer">
+      Yes, our courses start from the basics and gradually progress to advanced topics with hands-on guidance.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Do you provide certificates after completion?</span>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="faq-answer">
+      Yes, you’ll receive a verified certificate upon successfully completing the course.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Can I get career guidance after the course?</span>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="faq-answer">
+      We provide career counseling and internship opportunities to help students transition smoothly into the job market.
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+
+<section class="section">
+  <h2>Why Choose Us</h2>
+  <div class="underline"></div>
+  <div class="cards">
+    <div class="card">
+      <i class="fas fa-user-tie"></i>
+      <h3>Expert Trainers</h3>
+      <p>Learn from industry professionals who have years of experience in their respective fields.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-headset"></i>
+      <h3>24/7 Student Support</h3>
+      <p>Our dedicated support team is always available to help you anytime, anywhere.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-clipboard-list"></i>
+      <h3>Internship Programs</h3>
+      <p>Gain practical experience through real-world internships and live projects.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Expert Faculty</h3>
+      <p>Learn from experienced mentors who guide you through practical and advanced concepts step by step.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Modern Labs</h3>
+      <p>Work in high-tech labs equipped with the latest tools to build real-world projects efficiently.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-briefcase"></i>
+      <h3>Career Support</h3>
+      <p>We provide dedicated placement assistance and professional career-building programs.</p>
+    </div>
+
+
+    
+  </div>
+</section>
+
+ <div class="support-section">
+    <h2>Still have questions?</h2>
+    <p>Our support team is here to help. Reach out to us and we'll get back to you within 24 hours.</p>
+    <a href="Contact.html" class="button">Contact Support</a>
+  </div>
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Left Section -->
+    <div class="footer-left">
+      <a href="index.html" style="text-decoration: none;"><h2>Techub</h2></a>
+      <p>
+        We build innovative software solutions that empower businesses 
+        to scale and thrive in the digital world. Let's create the future together.
+      </p>
+      
+    </div>
+
+    <!-- Links Section -->
+    <div class="footer-links">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="../index.html#campuses1">Campuses</a></li>
+        <li><a href="../OurTeam.html">Our Team</a></li>
+        <li><a href="../Courses.html">Courses</a></li>
+        <li><a href="../servicesPage/Services.html">Services</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="../advancedweb.html">Advanced Web Development</a></li>
+        <li><a href="../Cyber.html">Cyber Security</a></li>
+        <li><a href="../google.html">Google UI/UX Design</a></li>
+        <li><a href="../Forensic.html">Data Forensic</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="../index.html#FAQ">FAQs</a></li>
+        <li><a href="../index.html#SR">Students Reviews</a></li>
+        <li><a href="../servicesPage/Services.html#CR">Client Reviews</a></li>
+        <li><a href="../Enroll.html">Enroll Now</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Punjab, Pakistan</p>
+      <p><i class="fas fa-phone-alt"></i> +92 300 1234567</p>
+      <p><i class="fas fa-envelope"></i> info@techub.com</p>
+      <li><a href="../Contact.html">🌐 Contact Now</a></li>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Techub. All Rights Reserved.</p>
+    
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script>
+function toggleMenu() {
+  console.log("Hamburger clicked!");
+}
+</script>
+
+
+
+  <script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+    });
+  });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+function toggleMenu() {
+  console.log("function running");
+}
+</script>
+</body>
+</html>

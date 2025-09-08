@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Carousel Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    /* Left Main Carousel */
+    .main-carousel {
+      flex: 3;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .main-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .main-carousel img.active {
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .arrow.left { left: 20px; }
+    .arrow.right { right: 20px; }
+
+    /* Right Side */
+    .side-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-left: 2px solid #ccc;
+    }
+
+    .logo-box {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .logo-box img {
+      width: 80px;
+    }
+
+    /* Automatic Carousel */
+    .auto-carousel {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .auto-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .auto-carousel img.active {
+      display: block;
+    }
+
+    /* Bottom Auto Carousel */
+    .bottom-carousel {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bottom-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .bottom-carousel img.active {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Main Carousel -->
+    <div class="main-carousel">
+      <span class="arrow left" onclick="prevSlide()">&#10094;</span>
+      <span class="arrow right" onclick="nextSlide()">&#10095;</span>
+      <img src="https://picsum.photos/id/1015/800/600" class="active">
+      <img src="https://picsum.photos/id/1016/800/600">
+      <img src="https://picsum.photos/id/1018/800/600">
+    </div>
+
+    <!-- Right Section -->
+    <div class="side-section">
+      <div class="logo-box">
+        <h2>LOGO</h2>
+        <p>Page Title</p>
+      </div>
+
+      <div class="auto-carousel" id="sideAuto">
+        <img src="https://picsum.photos/id/1020/400/300" class="active">
+        <img src="https://picsum.photos/id/1021/400/300">
+        <img src="https://picsum.photos/id/1022/400/300">
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // Main Carousel
+    let index = 0;
+    const slides = document.querySelectorAll(".main-carousel img");
+
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === n) slide.classList.add("active");
+      });
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
+
+    // Auto Carousel Function
+    function autoCarousel(selector, interval = 3000) {
+      const images = document.querySelectorAll(selector + " img");
+      let i = 0;
+      setInterval(() => {
+        images[i].classList.remove("active");
+        i = (i + 1) % images.length;
+        images[i].classList.add("active");
+      }, interval);
+    }
+
+    autoCarousel("#sideAuto", 2500);
+    autoCarousel("#bottomAuto", 2000);
+  </script>
+
+</body>
+</html>
