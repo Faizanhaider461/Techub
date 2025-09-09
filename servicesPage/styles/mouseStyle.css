@@ -1,0 +1,48 @@
+ * {
+     cursor: none;
+     /* Hide the default cursor */
+ }
+
+ .custom-cursor {
+     position: fixed;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     background-color: #9cff00;
+     box-shadow: 0 0 10px #9cff00;
+     pointer-events: none;
+     transform: translate(-50%, -50%);
+     transition: transform 0.2s ease;
+     z-index: 9999;
+ }
+
+ .cursor-outer {
+     position: fixed;
+     width: 40px;
+     height: 40px;
+     border: 2px solid #9cff00;
+     border-radius: 50%;
+     pointer-events: none;
+     transform: translate(-50%, -50%);
+     transition: all 0.5s ease-out;
+     z-index: 9998;
+ }
+
+ .cursor-active {
+     transform: translate(-50%, -50%) scale(1.2);
+     background-color: #9cff00;
+     box-shadow: 0 0 15px #9cff00
+ }
+
+ .outer-active {
+     transform: translate(-50%, -50%) scale(1.3);
+     border-width: 1px;
+     border-color: #9cff00
+ }
+ @media (max-width: 1024px) {
+    
+
+    #cursor-outer, #cursor {
+        display: none;
+    }
+}
